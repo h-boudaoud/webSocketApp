@@ -2,7 +2,7 @@
 A simple Chat application
 
 
-To run webSocketApp : `php bin/chat-server.php`
+To open webSocketApp server : `php bin/chat-server.php`
 
 Currently, the project  contains a Websockets server.
 
