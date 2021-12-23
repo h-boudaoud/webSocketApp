@@ -1,3 +1,5 @@
 # gitignore folders
 
 /vendor/*
+/tmp/*
+/.idea/*
