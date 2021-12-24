@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Chat page' %}
+{% block javascriptsHead %}
+
+    <script>
+        const name = '{{ name }}';
+        if(name) {
+            const conn = new WebSocket('ws://127.0.0.1:3001');
+            conn.onopen = function (e) {
+                console.log("Connection established!");
+                conn.send('Hello World! I am ' + name);
+            };
+
+            conn.onmessage = function (e) {
+                console.log(e.data);
+            }
+        }else{
+            console.log('The user is note defined');
+        }
+
+    </script>
+{% endblock %}
+{% block body %}
+    <h2>Chat page : {{ channel.label }} - user : {{ name }}</h2>
+    <ul>
+        {% for name in params |filter(name=> name !='') %}
+            <li>And hello {{ name }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

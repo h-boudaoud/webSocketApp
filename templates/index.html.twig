@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Index'%}
+{% block body %}
+<h2>Welcome in my chat app</h2>
+<div class="p-5">
+    <form action="/chat" method="post" >
+    <div class="form-group mb-3">
+        <label for="username">username</label>
+        <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                value="{{ name }}"
+                placeholder="tape your username her"
+        />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-warning">Reset</button>
+    </form>
+</div>
+{% endblock %}
